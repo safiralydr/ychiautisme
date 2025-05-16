@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>YCHI Autism Center - Portal Kesehatan Autisme Terpercaya</title>
+    <style>
+      /* Reset dan Styling Dasar */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f5f8fa;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header Styling */
+      header {
+        background-color: white;
+        color: black;
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-img {
+        height: 40px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 1.5rem;
+      }
+
+      nav ul li a {
+        color: #0d6699;
+        text-decoration: none;
+        font-weight: 400;
+        transition: all 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: #ffe082;
+      }
+
+      .menu-toggle {
+        display: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #b9e6ff, #0d6699);
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 2rem;
+        color: white;
+      }
+
+      .hero-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      .hero-content {
+        flex: 1;
+        padding-right: 2rem;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-image img {
+        max-width: 70%;
+        height: auto;
+      }
+
+      /* Button Styling */
+      .btn {
+        display: inline-block;
+        background-color: #27548a;
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #27548a;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+
+      .profil {
+        padding: 60px;
+        background-color: #f0f9ff;
+      }
+
+      .content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .text {
+        flex: 1 1 50%;
+        padding-right: 20px;
+      }
+
+      .text h4 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .highlight {
+        border-bottom: 5px solid #FBDB93;
+      }
+
+      .text h1 {
+        font-size: 32px;
+        margin: 10px 0;
+        line-height: 1.2;
+      }
+
+      .blue {
+        color: #058ed9;
+      }
+
+        .text p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        text-align: justify;
+      }
+
+
+      .btn-primary {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        border: 2px solid #129ff7;
+        color: #129ff7;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
+
+      .btn-primary:hover {
+        background: #129ff7;
+        color: #fff;
+      }
+
+      .slider {
+        flex: 1 1 40%;
+        max-width: 500px;
+        position: relative;
+      }
+
+      .slider img {
+        width: 100%;
+        display: none;
+        border-radius: 15px;
+      }
+
+      .slider img.active {
+        display: block;
+      }
+
+      /* Impact Section */
+      .impact-section {
+        padding: 60px 20px;
+        background: #fff;
+        text-align: center;
+      }
+
+      .impact-header h2 {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .impact-header p {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 40px;
+      }
+
+      .impact-stats {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .impact-box {
+        flex: 1 1 200px;
+        max-width: 220px;
+      }
+
+      .impact-box .icon {
+        font-size: 36px;
+        color: #058ed9;
+        margin-bottom: 10px;
+      }
+
+      .impact-box h3 {
+        font-size: 20px;
+        margin: 10px 0 5px;
+      }
+
+      .impact-box h3 span {
+        color: #058ed9;
+      }
+
+      .impact-box p {
+        font-size: 14px;
+        color: #333;
+      }
+
+      .impact-cta {
+        background: linear-gradient(135deg, #b9e6ff, #0d6699);
+        padding: 25px 20px;
+        border-radius: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .impact-cta p {
+        color: #fff;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0;
+      }
+
+      .btn-yellow {
+        background: #b9e6ff;
+        padding: 12px 24px;
+        border-radius: 12px;
+        color: #000;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+            .cta-buttons {
+        display: flex;
+        gap: 10px; /* Jarak antar tombol */
+        flex-wrap: wrap;
+      }
+
+
+
+      /* Section Title */
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .section-title h2 {
+        color: #0d6699;
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+
+      .section-title p {
+        color: #555;
+        font-size: 1em;
+      }
+
+      /* Articles Section */
+      .articles {
+        padding: 60px 20px;
+        background: linear-gradient(
+          135deg,
+          #f0f9ff 0%,
+          #b9e6ff 50%,
+          #f0f9ff 100%
+        );
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .article-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+      }
+
+      .article-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .article-img img {
+        width: 100%;
+        height: auto;
+      }
+
+      .article-content {
+        padding: 15px;
+      }
+
+      .article-content h3 {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+
+      .article-content p {
+        font-size: 14px;
+        color: #555;
+      }
+
+      .article-meta span {
+        font-size: 12px;
+        color: #888;
+      }
+
+      .see-more-wrapper {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .see-more-btn {
+        background-color: #b9e6ff;
+      }
+
+      /* Testimonial Section */
+      .testimoni {
+        padding: 60px 20px;
+        background-color: #f0f9ff;
+      }
+
+      .testimoni-title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      .testimoni-title::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 5px;
+        background: #ffe100;
+        margin: 8px auto 0;
+      }
+
+      .testimoni-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .testimoni-card {
+        background: #fff;
+        padding: 20px 30px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        flex: 1 1 45%;
+      }
+
+      .testimoni-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .testimoni-img {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+      }
+
+      .testimoni-role {
+        margin: 0;
+        font-size: 14px;
+        color: #555;
+      }
+
+      .testimoni-content {
+        font-style: italic;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #06699c;
+        color: white;
+        padding: 40px 20px;
+        position: relative;
+        font-family: sans-serif;
+      }
+
+      .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-col {
+        flex: 1 1 200px;
+        margin: 10px;
+      }
+
+      .footer-logo {
+        width: 120px;
+        margin-bottom: 10px;
+      }
+
+      .footer-col h4 {
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-col ul li {
+        margin: 8px 0;
+      }
+
+      .footer-col ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .footer-col ul li a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-col input[type="email"] {
+        width: 100%;
+        padding: 10px 15px;
+        margin-top: 10px;
+        border-radius: 30px;
+        border: none;
+      }
+
+      .footer-col button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        border-radius: 30px;
+        background: none;
+        border: 1px solid white;
+        color: white;
+        cursor: pointer;
+      }
+
+      .footer-col button:hover {
+        background-color: white;
+        color: #06699c;
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 999;
+      }
+
+      .whatsapp-float img {
+        width: 50px;
+        height: 50px;
+      }
+
+      /* Dialogflow Messenger Styling */
+      df-messenger {
+        --df-messenger-bot-message: #e1f5fe;
+        --df-messenger-button-titlebar-color: #0d6699;
+        --df-messenger-chat-background-color: #f5f8fa;
+        --df-messenger-font-color: #333;
+        --df-messenger-send-icon: #0d6699;
+        --df-messenger-user-message: #b9e6ff;
+        z-index: 999 !important;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+          color: #0d6699;
+        }
+
+        .header-container {
+          position: relative;
+        }
+
+        nav {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: white;
+          display: none;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        nav.active {
+          display: block;
+        }
+
+        nav ul {
+          flex-direction: column;
+          padding: 20px 0;
+        }
+
+        nav ul li {
+          margin: 10px 20px;
+        }
+
+        .hero-container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero-content {
+          padding-right: 0;
+          margin-bottom: 30px;
+        }
+
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .impact-stats {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .impact-cta {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .testimoni-wrapper {
+          flex-direction: column;
+        }
+
+        .footer-container {
+          flex-direction: column;
+        }
+
+        .footer-col {
+          margin-bottom: 30px;
+        }
+      }
+    </style>
+
+    <!-- Dialogflow Messenger -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <a href="#" class="logo">
+          <img src="img/ychi (1).png" alt="YCHI Logo" class="logo-img" />
+        </a>
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+        <nav id="navMenu">
+          <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="https://ychiautismcenter.org/contact">Layanan</a></li>
+            <li><a href="#articles">Artikel</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
+            <li><a href="#footer">Kontak</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <!-- Kiri: Teks -->
+        <div class="hero-content">
+          <h1>Layanan Konsultasi Autisme - Cepat, Aman, Terpercaya</h1>
+          <p>Dapatkan Informasi & Dukungan Autisme Langsung dari Chatbot.</p>
+          <a href="#" class="btn" id="openChatBtn">Konsultasi Sekarang</a>
+        </div>
+
+        <!-- Kanan: Gambar -->
+        <div class="hero-image">
+          <img src="img/flat-customer-support-illustration.png" alt="Chatbot Ilustrasi" />
+        </div>
+      </div>
+    </section>
+
+    <section class="profil">
+    <div class="content">
+      <div class="text">
+        <h4><span class="highlight">Tentang</span> YCHI Autism Center</h4>
+        <h1><span class="blue">Bringing Better Hopes</span><br><span class="blue">For The Nation In Autism Treatment</span></h1>
+        <p>
+          Yayasan Cinta Harapan Indonesia Autism Center adalah sebuah organisasi non profit untuk pendidikan gratis anak autisme pada keluarga prasejahtera di Indonesia. Kami berdedikasi untuk memberikan pendidikan bagi anak-anak autisme kepada keluarga yang kurang mampu. Anak-anak autisme akan diberikan pendidikan oleh terapis kami sesuai prosedur ABA (Applied Behavior Analysis) di klinik kami.
+        </p>
+        <a href="http://ychiautismcenter.org/about" class="btn-primary">BACA SELENGKAPNYA</a>
+      </div>
+      <div class="slider">
+        <img src="img/pf1.webp" alt="Foto Terapi Anak Autisme" class="slide active">
+        <img src="slide2.jpg" alt="Foto Terapi Anak Autisme" class="slide">
+        <img src="slide3.jpg" alt="Foto Terapi Anak Autisme" class="slide">
+      </div>
+    </div>
+  </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section" id="impact">
+      <div class="container">
+        <div class="impact-header">
+          <h2>
+            Sejak 2008 YCHI Autism Center Telah Memberikan Dampak di Indonesia
+          </h2>
+          <p>
+            Lihat Bagaimana YCHI Berdampak untuk Anak Autisme di Seluruh
+            Indonesia.
+          </p>
+        </div>
+
+        <div class="impact-stats">
+          <div class="impact-box">
+            <i class="fas fa-map-marker-alt icon"></i>
+            <h3><strong>11</strong> <span>Cabang</span></h3>
+            <p>yang tersebar di seluruh Indonesia</p>
+          </div>
+          <div class="impact-box">
+            <i class="fas fa-heart icon"></i>
+            <h3><strong>452</strong> <span>ABK</span></h3>
+            <p>yang tersebar di seluruh Indonesia</p>
+          </div>
+          <div class="impact-box">
+            <i class="fas fa-hands-helping icon"></i>
+            <h3><strong>65</strong> <span>Volunteers</span></h3>
+            <p>yang tersebar di seluruh Indonesia</p>
+          </div>
+          <div class="impact-box">
+            <i class="fas fa-user-md icon"></i>
+            <h3><strong>68</strong> <span>Terapis</span></h3>
+            <p>yang tersebar di seluruh Indonesia</p>
+          </div>
+        </div>
+
+       <div class="impact-cta">
+  <p>Tertarik untuk bergabung dengan YCHI?</p>
+  <div class="cta-buttons">
+    <a href="https://wa.me/628195052009" class="btn-yellow">Hubungi Kami</a>
+    <a href="https://wa.me/628195052009" class="btn-yellow">Isi Formulir</a>
+  </div>
+</div>
+
+
+        
+      </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="articles" id="articles">
+      <div class="container">
+        <div class="section-title">
+          <h2>Artikel YCHI</h2>
+          <p>Informasi terkini untuk bunda bunda</p>
+        </div>
+
+        <div class="article-grid">
+          <!-- Kartu 1 -->
+          <div class="article-card">
+            <div class="article-img">
+              <img src="img/ar1.png" alt="Artikel Autism" />
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span>05 February 2025 13:37</span>
+              </div>
+              <h3>Maitri : Cari tau dulu, biar gak ketipu</h3>
+              <p>
+                Belum lama ini, YCHI Autism Center menerima laporan bahwa
+                terdapat pihak yang me...
+              </p>
+              <a href="https://donation.ychiautismcenter.org/public/artikel/maitri-cari-tau-dulu-biar-gak-ketipu" class="btn">Baca Selengkapnya</a>
+            </div>
+          </div>
+
+          <!-- Kartu 2 -->
+          <div class="article-card">
+            <div class="article-img">
+              <img src="img/ar2.png" alt="Digital Detox" />
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span>09 December 2024 12:53</span>
+              </div>
+              <h3>Digital Detox: Mengelola Screen Time untuk Anak</h3>
+              <p>
+                Di era teknologi ini, layar digital menjadi bagian tak
+                terpisahkan dari kehidupa...
+              </p>
+              <a href="https://donation.ychiautismcenter.org/public/artikel/digital-detox-mengelola-screen-time-untuk-anak" class="btn">Baca Selengkapnya</a>
+            </div>
+          </div>
+
+          <!-- Kartu 3 -->
+          <div class="article-card">
+            <div class="article-img">
+              <img src="img/ar3.png" alt="Nature Therapy" />
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span>09 December 2024 12:42</span>
+              </div>
+              <h3>Manfaat Nature Therapy bagi Anak dengan Autisme</h3>
+              <p>
+                Nature therapy, atau terapi berbasis alam, semakin populer
+                sebagai salah satu pe...
+              </p>
+              <a href="https://donation.ychiautismcenter.org/public/artikel/manfaat-nature-therapy-bagi-anak-dengan-autisme" class="btn">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tombol Bawah -->
+        <div class="see-more-wrapper">
+          <a href="https://donation.ychiautismcenter.org/public/artikel" class="btn see-more-btn">Lihat Semua Artikel</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimoni" id="testimoni">
+      <div class="container">
+        <h2 class="testimoni-title">Testimoni</h2>
+        <div class="testimoni-wrapper">
+          <!-- Testimoni 1 -->
+          <div class="testimoni-card">
+            <div class="testimoni-header">
+              <img
+                src="img/pp2.jpg"
+                alt="Shahnaz Haque"
+                class="testimoni-img"
+              />
+              <div>
+                <h3>Shahnaz Haque</h3>
+                <p class="testimoni-role">Artis dan Pemerhati Anak</p>
+              </div>
+            </div>
+            <p class="testimoni-content">
+              <em>
+                Melakukan pekerjaan yang luar biasa di YCHI untuk membantu
+                pendidikan anak-anak luar biasa juga, sangat perlu kita dukung
+                setiap kegiatan sosial seperti ini, banyak sekali keluarga
+                prasejahtera yang terbantu oleh YCHI
+              </em>
+            </p>
+          </div>
+
+          <!-- Testimoni 2 -->
+          <div class="testimoni-card">
+            <div class="testimoni-header">
+              <img
+                src="img/pp.jpeg"
+                alt="Eni Purwati"
+                class="testimoni-img"
+              />
+              <div>
+                <h3>Eni Purwati, AMK</h3>
+                <p class="testimoni-role">Pengurus ATePI</p>
+              </div>
+            </div>
+            <p class="testimoni-content">
+              <em>
+                Selalu menyenangkan untuk bekerja dengan orang-orang ini di
+                YCHI. Mereka tahu banyak tentang anak-anak berkebutuhan khusus
+                terutama anak-anak penyandang autisme, metode pengajaran ABA
+                sangat tepat untuk anak-anak autisme
+              </em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+      <div class="footer-container">
+        <!-- Kolom 1: Logo & Alamat -->
+        <div class="footer-col">
+          <img
+            src="img/ychi (1).png"
+            alt="YCHI Logo"
+            class="footer-logo"
+          />
+          <p><strong>Indonesia (Kantor Pusat & Proyek)</strong></p>
+          <p>
+            Ruko Green Rafflessia No. BC 31, Jl. WR Supratman No.10, Nengas,
+            Set. Jaya, Ciputat.
+          </p>
+          <p><i class="fa fa-envelope"></i> info@ychaustismcenter.org</p>
+          <p><i class="fa fa-phone"></i> +62 819-505-2009</p>
+        </div>
+
+        <!-- Kolom 2: Tentang Kami -->
+        <div class="footer-col">
+          <h4>Tentang Kami</h4>
+          <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#impact">Event</a></li>
+            <li><a href="#articles">Artikel</a></li>
+            <li><a href="#testimoni">Tentang ABK</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3: Donasi -->
+        <div class="footer-col">
+          <h4>Donasi</h4>
+          <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Event</a></li>
+            <li><a href="#">Artikel</a></li>
+            <li><a href="#">Tentang ABK</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 4: Newsletter -->
+        <div class="footer-col newsletter">
+          <h4>Daftar Newsletter</h4>
+          <input type="email" placeholder="Your Email Address" />
+          <button>Subscribe</button>
+        </div>
+      </div>
+
+      <!-- WhatsApp Icon -->
+      <a
+        href="https://wa.me/628195052009"
+        class="whatsapp-float"
+        target="_blank"
+      >
+        <img src="img/WALOGO.png" alt="WhatsApp" />
+      </a>
+    </footer>
+
+    <!-- Dialogflow Messenger Element -->
+    <df-messenger
+      chat-title="ychi_autisme"
+      agent-id="14f8b924-622a-4338-83c7-f3ccec92e674"
+      language-code="en"
+    ></df-messenger>
+
+    <script>
+      // Mobile Menu Toggle
+      const menuToggle = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+
+      // Smooth Scrolling for Navigation
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          document.querySelector(targetId).scrollIntoView({
+            behavior: "smooth",
+          });
+
+          // Close mobile menu if open
+          if (navMenu.classList.contains("active")) {
+            navMenu.classList.remove("active");
+          }
+        });
+      });
+
+      // Open Dialogflow Chat on Button Click
+      document
+        .getElementById("openChatBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // Find Dialogflow Messenger component and click its button to open
+          const dfMessenger = document.querySelector("df-messenger");
+          const shadowRoot = dfMessenger.shadowRoot;
+          const chatButton = shadowRoot.querySelector(
+            "df-messenger-chat-bubble"
+          );
+
+          // Check if chat is already open
+          const chatWindow = shadowRoot.querySelector("df-messenger-chat");
+          if (chatWindow) {
+            if (chatWindow.style.display === "none") {
+              chatButton.click();
+            }
+          } else {
+            chatButton.click();
+          }
+        });
+
+      // Initialize Dialogflow Messenger with custom configurations
+      window.addEventListener("DOMContentLoaded", function () {
+        // Optional: Add configuration
+        const dfMessenger = document.querySelector("df-messenger");
+
+        // Event listener for when Dialogflow is ready
+        dfMessenger.addEventListener("df-messenger-loaded", function () {
+          console.log("Dialogflow Messenger is ready!");
+
+          // You can add custom welcome events or trigger intents here
+          // For example:
+          // dfMessenger.renderCustomCard("Selamat datang di YCHI Autism Center! Apa yang ingin Anda ketahui tentang autisme?");
+        });
+
+        // Handle error events
+        dfMessenger.addEventListener("df-messenger-error", function (event) {
+          console.error("Dialogflow Messenger error:", event.detail.error);
+        });
+      });
+    </script>
+  </body>
+</html>
